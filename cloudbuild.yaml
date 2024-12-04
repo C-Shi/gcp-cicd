@@ -15,6 +15,6 @@ steps:
 
 # Optionally, specify log level, for example to DEBUG
 options:
-  logging: NONE  # Default is CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY  # Default is CLOUD_LOGGING_ONLY
   substitutionOption: ALLOW_LOOSE  # Allows unreferenced variables
 
