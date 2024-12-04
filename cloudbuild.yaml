@@ -1,0 +1,20 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--tag'
+      - 'gcr.io/$PROJECT_ID/my-image:$COMMIT_SHA'
+      - '.'
+    id: 'Build Docker Image'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/my-image:$COMMIT_SHA'
+    id: 'Push Docker Image'
+
+# Optionally, specify log level, for example to DEBUG
+options:
+  logging: NONE  # Default is CLOUD_LOGGING_ONLY
+  substitutionOption: ALLOW_LOOSE  # Allows unreferenced variables
+
